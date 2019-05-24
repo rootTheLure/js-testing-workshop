@@ -91,6 +91,33 @@ describe('tree', () => {
                 },
             });
         });
+        it('should change parent for next node', () => {
+            tree.insert(8, 'a');
+            tree.insert(2, 'b');
+            tree.insert(14, 'c');
+            tree.insert(1, 'd');
+            tree.insert(6, 'e');
+            tree.insert(4, 'f');
+            tree.insert(7, 'g');
+            tree.delete('b');
+
+            expect(tree.root.left.left.parent).to.be.equal({
+                key: 4,
+                value: 'f',
+                left: {
+                    key: 1, value: 'd', left: null, right: null,
+                },
+                right: {
+                    key: 6,
+                    value: 'e',
+                    left: null,
+                    right:
+                    {
+                        key: 7, value: 'g', left: null, right: null,
+                    },
+                },
+            });
+        });
     });
 
     describe('search', () => {
