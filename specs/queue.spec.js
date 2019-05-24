@@ -55,7 +55,7 @@ describe('Queue', function () {
       listData.forEach((element) => queue.push(element));
       let result = queue.top(10);
       expect(result).to.be.equal(5);
-      let result = queue.top(10);
+      result = queue.top(10);
       expect(result).to.be.equal(queue.head);  
     });
   });
