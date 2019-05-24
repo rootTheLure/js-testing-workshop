@@ -37,6 +37,16 @@ describe('tree', () => {
                 key: 1, value: 'd', left: null, right: null,
             });
         });
+
+        it('should store value in this.root.right if key is bigger then root.left', () => {
+            tree.insert(8, 'a');
+            tree.insert(2, 'b');
+            tree.insert(7, 'd');
+
+            expect(tree.root.left.right).to.be.equal({
+                key: 7, value: 'd', left: null, right: null,
+            });
+        });
     });
     describe('delete', () => {
         it('should remove node by key from tree containing only root ', () => {
