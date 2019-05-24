@@ -1,0 +1,15 @@
+{
+  "extends": ["airbnb-base"],
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true,
+    "mocha": true,
+    "jest": true
+  },
+  "rules": {
+    "no-console" : 1,
+    "indent": [2, 4, { "SwitchCase": 1 }],
+    "semi": ["error", "always"]
+  }
+}
