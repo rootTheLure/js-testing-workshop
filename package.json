@@ -6,11 +6,14 @@
   "license": "MIT",
   "description": "tools and tasks for workshop",
   "scripts": {
-    "test:unit:dbg": "node ./node_modules/mocha/bin/mocha --inspect-brk -r ./tools/setup.js  -- \"./specs/*.spec.js\"",
-    "test:unit": "node ./node_modules/mocha/bin/mocha -r ./tools/setup.js  -- \"./specs/*.spec.js\""
+    "test": "mocha",
+    "tests": "mocha ./specs/*.spec.js -r ./tools/setup.js --watch"
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
     "mocha": "^6.1.4",
     "sinon": "^7.3.2",
     "sinon-chai": "^3.3.0"
