@@ -10,6 +10,13 @@ describe('linked list', function(){
 
             expect(myList.size).to.be.equal(2);
         });
+
+        it('adds item at empty list', function(){
+            let myList = new List();
+            myList.add('value_1');
+
+            expect(myList.head).to.be.equal(true);
+        });
     });
 
     describe('getAt', function(){
@@ -52,6 +59,14 @@ describe('linked list', function(){
             myList.removeAt(1);
             
             expect(myList.head.next == nextItem).to.be.equal(true);
+        });
+
+        it('should reject incorected index', function(){
+            let myList = new List();
+            
+            myList.removeAt(-3);
+            
+            expect(myList.size).to.be.equal(myList.size);
         });
     });
 
